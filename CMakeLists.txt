@@ -30,7 +30,10 @@ add_library(SolveAXXB SHARED ${SRC})
 ## Specify libraries to link a library or executable target against
 target_link_libraries(SolveAXXB
   ${EIGEN_LIBRARIES}
+  glog
 )
+target_include_directories(SolveAXXB PUBLIC 
+                           "${PROJECT_BINARY_DIR}")
 
 # added by Errol --- start
 add_executable(solver_test main.cpp)
