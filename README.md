@@ -27,7 +27,7 @@ A C++ library to solve equation AX=XB, which is known as been widely used in han
    ```
 5. **(optional)**Install dependency
    ```bash
-   sudo apt install libeigen3-dev
+   sudo apt install libeigen3-dev libgoogle-glog-dev
    ```
 6. Run **cmake**
    ```bash
@@ -41,4 +41,7 @@ A C++ library to solve equation AX=XB, which is known as been widely used in han
    ```bash
    ./solver_test
    ```
+
+## Known issues
+1. **SolveAXXB** relies on **glob** installed on your system, whereas the **solver_test** relies on the **glob** included in the repo. Should reduce the reliance for one of the **glob**
  
