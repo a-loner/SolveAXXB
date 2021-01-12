@@ -8,6 +8,10 @@ file(GLOB SRC
     axxb/*
 )
 
+# added by Errol --- start
+add_subdirectory(glog)
+# added by Errol --- end
+
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 # Eigen
@@ -27,6 +31,14 @@ add_library(SolveAXXB SHARED ${SRC})
 target_link_libraries(SolveAXXB
   ${EIGEN_LIBRARIES}
 )
+
+# added by Errol --- start
+add_executable(solver_test main.cpp)
+target_link_libraries(solver_test PUBLIC SolveAXXB glog)
+target_include_directories(solver_test PUBLIC 
+                           "${PROJECT_BINARY_DIR}"
+                           "${PROJECT_SOURCE_DIR}/axxb")
+# added by Errol --- end
 
 install(TARGETS SolveAXXB
   LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
