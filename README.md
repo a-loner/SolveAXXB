@@ -3,7 +3,7 @@
 A C++ library to solve equation AX=XB, which is known as been widely used in hand-eye calibration for robotics.
 
 ## Revision
-1. Integrated [Google/glog](https://github.com/google/glog) as a subdirectory
+1. Integrated [google/glog](https://github.com/google/glog) as a subdirectory
 2. Created **main.cpp** for testing
 3. Adjusted **CMakeLists.txt** for integration of **glog** and creation of **solver_test**
 4. Added **.gitignore** to ignore folder **build/**
@@ -41,7 +41,10 @@ A C++ library to solve equation AX=XB, which is known as been widely used in han
    ```bash
    ./solver_test
    ```
+## Notes
+1. Poses **vec_a** and **vec_b** should have the same length
+2. The length of **vec_a** should be no less than **2**
 
 ## Known issues
-1. **SolveAXXB** relies on **glob** installed on your system, whereas the **solver_test** relies on the **glob** included in the repo. Should reduce the reliance for one of the **glob**
+1. **SolveAXXB** relies on **glog** installed on your system, whereas the **solver_test** relies on the **glog** included in the repo. Should reduce the reliance for one of the **glog**
  
